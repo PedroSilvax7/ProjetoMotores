@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
          float v = Input.GetAxis("Vertical"); // -1 pra tras, 0 nada, 1 pra cima 
 
          Vector3 direcao = new Vector3(h, 0, v);
+         rb.AddForce(direcao * velocidade * Time.deltaTime,ForceMode.Impulse);
     }
 }
 
