@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,24 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public int velocidade = 10;
+    public int forcaPulo = 7;
+    public bool noChão;
+    
     private Rigidbody rb;
+    
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Start");
         TryGetComponent(out rb);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!noChão  && collision.gameObject.tag == "Chão")
+        {
+            noChão = true;
+        }
     }
 
     // Update is called once per frame
@@ -24,6 +37,15 @@ public class Player : MonoBehaviour
          Vector3 direcao = new Vector3(h, 0, v);
          rb.AddForce(direcao * velocidade * Time.deltaTime,ForceMode.Impulse);
 
+         if (Input.GetKeyDown(KeyCode.Space) && noChão)
+         {
+             rb.AddForce(Vector3.up * forcaPulo, ForceMode.Impulse);
+             noChão = false;
+         }
+         
+         
+         
+         
          if (transform.position.y <= -10)
          {
              // Jogador caiu
