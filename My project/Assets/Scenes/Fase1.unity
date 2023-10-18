@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44440818, g: 0.49388087, b: 0.57321334, a: 1}
+  m_IndirectSpecularColor: {r: 0.44440863, g: 0.49388146, b: 0.57321393, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1957,8 +1957,8 @@ MonoBehaviour:
   hud: {fileID: 37885653}
   msgVitoria: {fileID: 1311228262}
   restantes: 0
-  clipMoeda: {fileID: 0}
-  clipVitoria: {fileID: 0}
+  clipMoeda: {fileID: 8300000, guid: cd31a83fdfe897a48b70062e177490a9, type: 3}
+  clipVitoria: {fileID: 8300000, guid: a2f2bf5df4965b94889b04ae7ffdbdbb, type: 3}
 --- !u!4 &1924132712
 Transform:
   m_ObjectHideFlags: 0

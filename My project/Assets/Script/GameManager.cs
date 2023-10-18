@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
         {
             // Ganhou o jogo
             msgVitoria.text = "Parabéns!";
+            source.Stop();
+            source.PlayOneShot(clipVitoria);
         }
     }
     
